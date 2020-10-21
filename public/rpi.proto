@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package en;
+
+message ReceivedRpiData {
+  optional uint32 timestamp = 1;
+  optional int64 rssi = 3;
+  optional bytes aem = 4;
+}
+
+message RpiList {
+  repeated ReceivedRpiData data = 1;
+}
+
+message RpiDbEntry {
+  optional bytes key = 1;
+  optional RpiList value = 2;
+}
+
+message RpiDb {
+  repeated RpiDbEntry entry = 1;
+}
